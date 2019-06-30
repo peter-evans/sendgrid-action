@@ -37,7 +37,7 @@ action "SendGrid" {
 
 The following example is a very basic use case of sending a single email to a single recipient. For more complicated use cases see the list of examples [here](https://github.com/sendgrid/sendgrid-nodejs/tree/master/use-cases).
 
-```nodejs
+```node
 #! /usr/bin/env node
 
 const sgMail = require('@sendgrid/mail');
