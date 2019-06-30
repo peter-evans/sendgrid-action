@@ -1,4 +1,4 @@
-# SendGrid
+# SendGrid Action
 
 A GitHub Action to send email with [SendGrid](https://sendgrid.com/).
 
