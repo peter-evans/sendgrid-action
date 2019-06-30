@@ -50,8 +50,10 @@ const msg = {
     text: 'Hello plain world!',
     html: '<p>Hello HTML world!</p>',
 };
-sgMail.send(msg);
-console.log('Sent.');
+sgMail
+    .send(msg)
+    .then(() => console.log('Mail sent successfully'))
+    .catch(error => console.error(error.toString()));
 ```
 
 **Note**: Your script file *must* be executable otherwise it will cause a `permission denied` error. Make it executable with this command.
