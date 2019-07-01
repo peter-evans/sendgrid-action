@@ -3,7 +3,7 @@
 
 A GitHub Action to send email with [SendGrid](https://sendgrid.com/).
 
-The action simply executes a Node.js script allowing you to customise sending email with the [Node.js API Library](https://github.com/sendgrid/sendgrid-nodejs).
+The action executes a Node.js script allowing you to customise sending email with the [Node.js API Library](https://github.com/sendgrid/sendgrid-nodejs).
 
 ## Usage
 
@@ -34,15 +34,17 @@ action "SendGrid" {
 }
 ```
 
-#### Example script file
+#### Example script files
 
-The following example is a very basic use case of sending a single email to a single recipient. For more complicated use cases see the list of examples [here](https://github.com/sendgrid/sendgrid-nodejs/tree/master/use-cases).
+The following examples are quite basic use cases. For more complicated use cases see the list of examples [here](https://github.com/sendgrid/sendgrid-nodejs/tree/master/use-cases).
 
+Sending a single email to a single recipient:
 ```node
 #! /usr/bin/env node
 
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 const msg = {
     to: 'recipient@example.org',
     from: 'sender@example.org',
@@ -50,6 +52,41 @@ const msg = {
     text: 'Hello plain world!',
     html: '<p>Hello HTML world!</p>',
 };
+
+sgMail
+    .send(msg)
+    .then(() => console.log('Mail sent successfully'))
+    .catch(error => console.error(error.toString()));
+```
+
+Sending an attachment:
+```node
+#! /usr/bin/env node
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+const fs = require('fs'),
+    filename = 'hello-world.pdf',
+    fileType = 'application/pdf',
+    data = fs.readFileSync('attachments/' + filename);
+
+const msg = {
+    to: 'recipient@example.org',
+    from: 'sender@example.org',
+    subject: 'Hello world',
+    text: 'Hello plain world!',
+    html: '<p>Hello HTML world!</p>',
+    attachments: [
+        {
+            content: data.toString('base64'),
+            filename: filename,
+            type: fileType,
+            disposition: 'attachment',
+        },
+    ],
+};
+
 sgMail
     .send(msg)
     .then(() => console.log('Mail sent successfully'))
