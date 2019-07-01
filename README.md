@@ -7,7 +7,7 @@ The action executes a Node.js script allowing you to customise sending email wit
 
 ## Usage
 
-```
+```hcl
 action "SendGrid" {
   uses = "peter-evans/sendgrid-action@v1.0.0"
   secrets = ["SENDGRID_API_KEY"]
@@ -24,7 +24,7 @@ If you don't have one you can sign up and get 100 emails per day for free [here]
 The action assumes there is a Node.js script located at `.github/sendgrid.js`.
 This path can be overridden with an environment variable.
 
-```
+```hcl
 action "SendGrid" {
   uses = "peter-evans/sendgrid-action@v1.0.0"
   secrets = ["SENDGRID_API_KEY"]
