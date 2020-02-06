@@ -1,0 +1,9 @@
+name: 'SendGrid Action'
+author: 'Peter Evans'
+description: 'Send email with SendGrid'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'mail'  
+  color: 'yellow'
