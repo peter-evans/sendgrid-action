@@ -4,8 +4,8 @@ jobs:
   sendGrid:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: SendGrid
-      uses: ./
-      env:
-        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      - uses: actions/checkout@v2
+      - name: SendGrid
+        uses: ./
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
