@@ -9,7 +9,7 @@ The action executes a Node.js script allowing you to customise sending email wit
 
 ```yml
     - name: SendGrid
-      uses: peter-evans/sendgrid-action@v1.0.0
+      uses: peter-evans/sendgrid-action@v1
       env:
         SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 ```
@@ -26,7 +26,7 @@ This path can be overridden with an environment variable.
 
 ```yml
     - name: SendGrid
-      uses: peter-evans/sendgrid-action@v1.0.0
+      uses: peter-evans/sendgrid-action@v1
       env:
         SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
         SCRIPT_FILEPATH: ./some-path/email-sending-script.js
@@ -99,4 +99,4 @@ chmod +x email-sending-script.js
 
 ## License
 
-MIT License - see the [LICENSE](LICENSE) file for details
+[MIT](LICENSE)
