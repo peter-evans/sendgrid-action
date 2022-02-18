@@ -9,7 +9,7 @@ const fs = require('fs'),
     data = fs.readFileSync('attachments/' + filename);
 
 const msg = {
-    to: 'peterevans.dev@protonmail.com',
+    to: 'erica@ericat.me',
     from: 'sender@example.org',
     subject: 'Hello world',
     text: 'Hello plain world!',
