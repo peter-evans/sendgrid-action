@@ -34,7 +34,7 @@ This path can be overridden with an environment variable.
 
 #### Example script files
 
-The following examples are quite basic use cases. For more complicated use cases see the list of examples [here](https://github.com/sendgrid/sendgrid-nodejs/tree/master/use-cases).
+The following examples are quite basic use cases. For more complicated use cases see the list of examples [here](https://github.com/sendgrid/sendgrid-nodejs/tree/main/docs/use-cases).
 
 Sending a single email to a single recipient:
 ```node
